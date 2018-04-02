@@ -18,9 +18,9 @@
 
     <color name="text_white">#FFFFFF</color>
 
-    <color name="text_yellow">#FFC800</color>
+    <color name="text_pink">#FFB6C1</color>
 
     <color name="text_topbar">#694E42</color>
 
-    <color name="div_white">#E5E5E5</color>
+    <color name="div">#ffc0c3c4</color>
 </resources>
