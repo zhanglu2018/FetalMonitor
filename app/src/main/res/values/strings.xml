@@ -1,3 +1,50 @@
 <resources>
     <string name="app_name">FetalMonitor</string>
+    <string name="string_search">   请确保设备开机，首次连接大约需要1~2分钟左右，请耐心等待。如仍有问题，建议重新点击“搜索设备”按钮或重启APP</string>
+    <string name="service_status">服务状态</string>
+    <string name="debug_info">调试信息</string>
+    <string name="info_area">信息显示区</string>
+    <string name="text_test">测试文字</string>
+    <string name="action_settings">Settings</string>
+    <string name="openBt">解除</string>
+    <string name="searchBt">搜索</string>
+    <string name="saveBt">结果</string>
+    <string name="bond_Bt">绑定</string>
+    <string name="connect_Bt">连接</string>
+    <string name="start_service">启动服务</string>
+    <string name="record">记录</string>
+    <string name="tocoReset">宫缩复位</string>
+
+    <string name="stop_search">停止搜索</string>
+    <string name="finished_search">搜索完成</string>
+
+    <string-array name="searching">
+        <item >搜索中.</item>
+        <item >搜索中..</item>
+        <item >搜索中...</item>
+    </string-array>
+
+
+    <string name="device_select">选择的是</string>
+    <string name="status">状态</string>
+    <string name="back">返回</string>
+
+    <string name="record_start">记录开始</string>
+    <string name="recording">记录中...</string>
+    <string name="record_finished">记录结束</string>
+    <string name="bluetooth_relieve">蓝牙服务解除中...</string>
+    <string name="bluetooth_relived">蓝牙服务已经解除</string>
+    <string name="open_bluetooth">请先开启蓝牙</string>
+    <string name="bluetooth_service_start">蓝牙服务启动中...</string>
+    <string name="device_connected">已经连接设备</string>
+    <string name="device_connectting">开始连接...</string>
+    <string name="no_device_select">还没有选择设备</string>
+    <string name="start_bluetooth_connect">请先启动蓝牙连接</string>
+
+    <string name="read_data_start">连接完成，启动数据读取</string>
+    <string name="service_get_socket_fail">获取Socket失败</string>
+    <string name="service_get_socket_ok">socket连接成功</string>
+    <string name="service_get_inputstream_fail">获取输入流失败</string>
+    <string name="service_get_inputstream_ok">获取输入流完成</string>
+    <string name="service_read_data_fail">读取数据异常，蓝牙断开</string>
 </resources>

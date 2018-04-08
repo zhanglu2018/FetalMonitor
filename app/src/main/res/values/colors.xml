@@ -5,12 +5,13 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorinput">#FFFFFF</color>
     <color name="bg_black">#000000</color>
+    <color name="bg_pink">#ff8080</color>
 
     <color name="bg_white">#FFFFFF</color>
 
     <color name="bg_topbar">#FCFCFC</color>
 
-    <color name="bg_gray">#00F1F1F1</color>
+    <color name="bg_gray">#ececec</color>
 
     <color name="transparent">#00FFFFFF</color>
 
@@ -20,7 +21,7 @@
 
     <color name="text_pink">#FFB6C1</color>
 
-    <color name="text_topbar">#694E42</color>
+    <color name="text_black">#000000</color>
 
     <color name="div">#ffc0c3c4</color>
 </resources>

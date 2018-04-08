@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/back"
+            android:id="@+id/bt_tips_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/bt_tips_back"
+            android:layout_centerHorizontal="true"
+            android:text="小贴士"
+            android:textColor="@color/text_black"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_marginLeft="1.0px"
+        android:layout_marginRight="1.0px"
+        android:background="@color/div" />
+    <Button
+        android:id="@+id/bt_directions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="胎心仪使用说明"
+        android:textSize="20dp"
+        android:background="@color/bg_gray"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    <Button
+        android:id="@+id/bt_problem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="常见问题"
+        android:textSize="20dp"
+        android:background="@color/bg_gray"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    <Button
+        android:id="@+id/bt_understand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="如何看懂胎心监护图？"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/bg_gray"
+        android:layout_marginTop="5dp"/>
+
+
+</LinearLayout>
