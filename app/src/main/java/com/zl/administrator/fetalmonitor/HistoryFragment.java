@@ -20,7 +20,7 @@ public class HistoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.history_fragment,container,false);
         TextView txt_content = view.findViewById(R.id.txt_content);
-        txt_content.setText(content);
+
         return view;
     }
 

@@ -42,16 +42,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
-    <Button
-        android:id="@+id/bt_problem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="常见问题"
-        android:textSize="20dp"
-        android:background="@color/bg_gray"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
+
     <Button
         android:id="@+id/bt_understand"
         android:layout_width="match_parent"

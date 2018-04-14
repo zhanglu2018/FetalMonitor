@@ -31,8 +31,9 @@
             android:background="@null"
             android:ems="10"
             android:hint="请输入用户名"
+            android:text="super"
             android:imeOptions="actionDone"
-            android:textSize="12sp"/>
+            android:textSize="40px"/>
 
         <View
             android:layout_width="fill_parent"
@@ -41,7 +42,7 @@
             android:layout_marginRight="1.0px"
             android:background="#ffc0c3c4" />
         <EditText
-            android:id="@+id/pass"
+            android:id="@+id/password"
             android:layout_width="fill_parent"
             android:layout_height="44dp"
             android:gravity="center_vertical"
@@ -49,7 +50,7 @@
             android:background="@null"
             android:maxLength="16"
             android:maxLines="1"
-            android:textSize="12.0sp"
+            android:textSize="40px"
             android:hint="请输入密码" />
         <View
             android:layout_width="fill_parent"
@@ -79,22 +80,15 @@
         android:layout_marginRight="28dp"
         android:layout_below="@+id/loginBtn">
         <Button
-            android:layout_width="40dp"
+            android:id="@+id/regBtn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@null"
-            android:text="注册"
+            android:text="还没有账号？快来注册吧"
             android:textColor="#808080 "
             android:textSize="12dp"/>
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="200dp"
-            android:background="@null"
-            android:text="找回密码"
-            android:textColor="#808080 "
-            android:textSize="12dp"/>
+
 
     </LinearLayout>
 </RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/back"
+            android:id="@+id/bt_direction_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/bt_direction_back"
+            android:layout_centerHorizontal="true"
+            android:text="注册"
+            android:textColor="@color/text_black"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_marginLeft="1.0px"
+        android:layout_marginRight="1.0px"
+        android:layout_below="@+id/title"
+        android:background="#ffc0c3c4" />
+    <LinearLayout
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_logo"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/reguserId"
+            android:layout_width="fill_parent"
+            android:layout_height="44.0dip"
+            android:layout_weight="1"
+            android:background="@color/bg_gray"
+            android:ems="10"
+            android:hint="请输入用户名"
+            android:imeOptions="actionDone"
+            android:textSize="40px"/>
+
+        <EditText
+            android:id="@+id/regpassword"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:inputType="textPassword"
+            android:background="@color/bg_gray"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:textSize="40px"
+            android:hint="请输入密码" />
+
+        <EditText
+            android:id="@+id/duedate"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:background="@color/bg_gray"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:textSize="40px"
+            android:hint="请输入预产期" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/registerBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input"
+        android:background="@drawable/shape"
+        android:layout_marginTop="30dp"
+        android:text="注册"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"/>
+
+
+</RelativeLayout>

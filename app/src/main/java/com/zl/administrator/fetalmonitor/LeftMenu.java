@@ -38,7 +38,7 @@ public class LeftMenu extends Fragment {
         heads_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getActivity(), LoginActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), UserInfoActivity.class));
                 drawer_layout.closeDrawer(Gravity.START);
             }
         });

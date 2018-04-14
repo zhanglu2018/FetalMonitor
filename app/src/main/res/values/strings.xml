@@ -47,4 +47,8 @@
     <string name="service_get_inputstream_fail">获取输入流失败</string>
     <string name="service_get_inputstream_ok">获取输入流完成</string>
     <string name="service_read_data_fail">读取数据异常，蓝牙断开</string>
+    <string name="username">超人妈妈</string>
+    <string name="userheight">170</string>
+    <string name="userweight">60</string>
+    <string name="userpassword">123456</string>
 </resources>

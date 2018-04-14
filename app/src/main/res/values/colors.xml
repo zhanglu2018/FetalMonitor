@@ -11,7 +11,7 @@
 
     <color name="bg_topbar">#FCFCFC</color>
 
-    <color name="bg_gray">#ececec</color>
+    <color name="bg_gray">#f2f1f1</color>
 
     <color name="transparent">#00FFFFFF</color>
 
@@ -22,6 +22,7 @@
     <color name="text_pink">#FFB6C1</color>
 
     <color name="text_black">#000000</color>
+
 
     <color name="div">#ffc0c3c4</color>
 </resources>

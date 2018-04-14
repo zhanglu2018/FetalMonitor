@@ -15,7 +15,6 @@ import java.util.Dictionary;
 public class TipsActivity extends AppCompatActivity {
 
     Button bt_directions ;
-    Button bt_problem;
     Button bt_understand;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,21 +22,12 @@ public class TipsActivity extends AppCompatActivity {
         setContentView(R.layout.tips);
 
         bt_directions = findViewById(R.id.bt_directions);
-        bt_problem = findViewById(R.id.bt_problem);
         bt_understand = findViewById(R.id.bt_understand);
         bt_directions.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TipsActivity.this,DirectionActivity.class));
-            }
-
-        });
-        bt_problem.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(TipsActivity.this,ProblemActivity.class));
             }
 
         });

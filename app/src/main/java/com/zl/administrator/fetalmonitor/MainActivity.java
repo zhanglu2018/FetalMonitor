@@ -2,6 +2,8 @@ package com.zl.administrator.fetalmonitor;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.zl.administrator.fetalmonitor.Models.MyDBOpenHelper;
+
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener{
 
     private RadioGroup rg_tab_bar;
@@ -19,13 +23,16 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     //Fragment Object
     private MonitorFragment monitorFragment;
     private HistoryFragment historyFragment;
+    private KnowledgeFragment knowledgeFragment;
     private FragmentManager fragmentManager;
 
     private DrawerLayout drawer_layout;
-    private View topbar;
     private Button left_menu_button;
     private LeftMenu leftMenu;
     private FragmentManager leftfragmentManager;
+
+    private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +46,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         leftfragmentManager = getFragmentManager();
         leftMenu = (LeftMenu) leftfragmentManager.findFragmentById(R.id.left_menu);
+
+        context = MainActivity.this;
         initViews();
     }
+
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -62,6 +72,14 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                     fragmentTransaction.show(historyFragment);
                 }
                 break;
+            case R.id.rb_knowledge:
+                if(knowledgeFragment == null){
+                    knowledgeFragment = new KnowledgeFragment("这是孕期知识库页面");
+                    fragmentTransaction.add(R.id.main_view,knowledgeFragment);
+                }else{
+                    fragmentTransaction.show(knowledgeFragment);
+                }
+                break;
 
         }
         fragmentTransaction.commit();
@@ -71,11 +89,12 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private void hideAllFragment(FragmentTransaction fragmentTransaction){
         if(monitorFragment != null)fragmentTransaction.hide(monitorFragment);
         if(historyFragment != null)fragmentTransaction.hide(historyFragment);
+        if(knowledgeFragment != null)fragmentTransaction.hide(knowledgeFragment);
     }
 
     private void initViews() {
         drawer_layout =  findViewById(R.id.drawer_layout);
-        left_menu_button = (Button) findViewById(R.id.left_menu_button);
+        left_menu_button = findViewById(R.id.left_menu_button);
 
         left_menu_button.setOnClickListener(this);
         drawer_layout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED,
@@ -113,4 +132,5 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         drawer_layout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED,
                 Gravity.START);    //解除锁定
     }
+
 }
