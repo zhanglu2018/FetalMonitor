@@ -48,7 +48,7 @@ public class MyDBOpenHelper extends SQLiteOpenHelper {
                 "    )\n" +
                 "    REFERENCES user (UserID) \n" +
                 ");\n");
-        db.execSQL("INSERT INTO user(UserID,Password) values(\"super\",\"123456\")");
+        db.execSQL("INSERT INTO user(UserID,Name,Password, Height, Weight,DueDate) values(\"super\",\"超人妈妈\",\"123456\",167,60,\"2018-10-10\")");
     }
     //软件版本号发生改变时调用
     @Override

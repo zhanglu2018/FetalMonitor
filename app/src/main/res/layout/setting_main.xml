@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageButton
+            android:id="@+id/bt_direction_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/bt_direction_back"
+            android:layout_centerHorizontal="true"
+            android:text="设置"
+            android:textColor="@color/text_black"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/bt_updatesetting"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:text="保存"
+            android:textColor="@color/text_black"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="胎心报警参数"
+            android:textColor="@color/text_black"
+            android:textSize="20dp"
+            android:background="@null"/>
+        <Button
+            android:id="@+id/pretermit"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:text="默认"
+            android:textColor="@color/text_white"
+            android:background="@color/bg_pink"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="胎心率报警范围"
+            android:textColor="@color/text_black"
+            android:textSize="15dp"
+            android:background="@null"/>
+        <Switch
+            android:id="@+id/alarm_swith"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:track="@drawable/track_selector"
+            android:textColor="@color/text_white"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="下限（次/分）"
+            android:textSize="20dp"
+            android:textColor="@color/text_black"/>
+        <EditText
+            android:id="@+id/low"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text=" "/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="上限（次/分）"
+            android:textSize="20dp"
+            android:textColor="@color/text_black"/>
+        <EditText
+            android:id="@+id/high"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text=" "/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

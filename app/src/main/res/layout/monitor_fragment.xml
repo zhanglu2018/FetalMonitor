@@ -9,32 +9,62 @@
     <TextView
         android:id="@+id/tx_content"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="110dp"
         android:layout_marginTop="30dp"
         android:gravity="left"
         android:text="@string/string_search"
         android:textColor="@color/text_pink"
         android:textSize="20sp"/>
     <TextView
-        android:id="@+id/seatch_state"
+        android:id="@+id/infor"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/bg_gray"
+        android:textSize="13sp"
+        android:hint="设备" />
+    <TextView
+        android:id="@+id/service_info"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:textColor="@color/text_pink"
+        android:textSize="15sp"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bg_gray"
-        android:textSize="32sp"
-        android:hint="" />
-    <ListView
-        android:id="@+id/search_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/bt_search"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="90dp"
-        android:text="搜索设备"
-        android:textSize="22dp"
-        android:textColor="@color/text_white"
-        android:background="@drawable/shape"/>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/bt_search"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:text="搜索设备"
+            android:textSize="22dp"
+            android:textColor="@color/text_white"
+            android:background="@drawable/shape"/>
+        <Button
+            android:id="@+id/bt_connect"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="60dp"
+            android:text="连接设备"
+            android:textSize="22dp"
+            android:textColor="@color/text_white"
+            android:background="@drawable/shape"/>
+        <Button
+            android:id="@+id/bt_record"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="60dp"
+            android:text="记录数据"
+            android:textSize="22dp"
+            android:textColor="@color/text_white"
+            android:background="@drawable/shape"/>
+
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
