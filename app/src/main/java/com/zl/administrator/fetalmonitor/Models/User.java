@@ -13,12 +13,12 @@ public class User {
     private String Password;
     private int    Height;
     private int    Weight;
-    private Date   DueDate;
+    private String DueDate;
 
     public User() {
     }
 
-    public User(String UserID, String Name, String Password,int Height,int Weight,Date DueDate) {
+    public User(String UserID, String Name, String Password,int Height,int Weight,String DueDate) {
         this.UserID = UserID;
         this.Name = Name;
         this.Password = Password;
@@ -68,11 +68,11 @@ public class User {
         this.Weight = Weight;
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return DueDate;
     }
 
-    public void setDueDate(Date Duedate) {
+    public void setDueDate(String Duedate) {
         this.DueDate = DueDate;
     }
 

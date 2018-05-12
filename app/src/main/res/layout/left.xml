@@ -126,7 +126,32 @@
             android:textSize="20dp"
             android:gravity="left"/>
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/icon_loginout"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/loginout"/>
 
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/bt_loginout"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="27dp"
+            android:layout_toEndOf="@+id/icon_loginout"
+            android:layout_toRightOf="@+id/icon_loginout"
+            android:background="@color/bg_pink"
+            android:text="退出登录"
+            android:textColor="@color/text_white"
+            android:textSize="20dp"
+            android:gravity="left"/>
+    </RelativeLayout>
 
 
 </LinearLayout>

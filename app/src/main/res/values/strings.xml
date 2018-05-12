@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FetalMonitor</string>
+    <string name="app_name">医十胎心监护仪</string>
     <string name="string_search">   请确保设备开机，首次连接大约需要1~2分钟左右，请耐心等待。如仍有问题，建议重新点击“搜索设备”按钮或重启APP</string>
     <string name="service_status">服务状态</string>
     <string name="debug_info">调试信息</string>
@@ -47,7 +47,6 @@
     <string name="service_get_inputstream_fail">获取输入流失败</string>
     <string name="service_get_inputstream_ok">获取输入流完成</string>
     <string name="service_read_data_fail">读取数据异常，蓝牙断开</string>
-    <string name="username">超人妈妈</string>
     <string name="userheight">170</string>
     <string name="userweight">60</string>
     <string name="userpassword">123456</string>

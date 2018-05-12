@@ -9,13 +9,15 @@ public class Alarm {
         private String UserID;
         private int    High;
         private int    Low;
+        private int    Switch;
         public Alarm() {
         }
 
-        public Alarm(String UserID,int High,int Low) {
+        public Alarm(String UserID,int High,int Low, int Switch) {
             this.UserID = UserID;
             this.High = High;
             this.Low = Low;
+            this.Switch = Switch;
 
         }
 
@@ -41,6 +43,14 @@ public class Alarm {
 
     public void setLow(int Low) {
         this.Low = Low;
+    }
+
+    public int getSwitch() {
+        return Switch;
+    }
+
+    public void setSwitch(int Switch) {
+        this.Switch = Switch;
     }
 
 

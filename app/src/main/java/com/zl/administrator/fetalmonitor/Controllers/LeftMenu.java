@@ -25,6 +25,7 @@ public class LeftMenu extends Fragment {
     Button bt_tips;
     Button bt_about;
     Button bt_setting;
+    Button bt_loginout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class LeftMenu extends Fragment {
         bt_tips = view.findViewById(R.id.bt_tips);
         bt_about = view.findViewById(R.id.bt_about);
         bt_setting = view.findViewById(R.id.bt_setting);
+        bt_loginout = view.findViewById(R.id.bt_loginout);
 
 
         heads_image.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +51,7 @@ public class LeftMenu extends Fragment {
 
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getActivity(), LoginActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), GuideActivity.class));
             }
 
         });
@@ -65,7 +67,7 @@ public class LeftMenu extends Fragment {
 
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getActivity(), LoginActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), AboutActivity.class));
             }
 
         });
@@ -77,7 +79,14 @@ public class LeftMenu extends Fragment {
             }
 
         });
+        bt_loginout.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), LoginActivity.class));
+            }
+
+        });
         return view;
 
     }

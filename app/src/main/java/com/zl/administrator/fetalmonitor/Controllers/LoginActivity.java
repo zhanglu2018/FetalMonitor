@@ -2,6 +2,7 @@ package com.zl.administrator.fetalmonitor.Controllers;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_main);
 
+
+
         bt_login = findViewById(R.id.loginBtn);
         bt_reg = findViewById(R.id.regBtn);
         context = LoginActivity.this;
@@ -68,6 +71,11 @@ public class LoginActivity extends AppCompatActivity {
                     {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.putExtra("user name", userid.getText().toString());///把用户名字绑定并带入后续activity
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+                        editor.putString("username",id);
+                        editor.commit();
                         startActivity(intent);
                     }
                     else{
@@ -76,9 +84,5 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
     }
-
-
-
 }

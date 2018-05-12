@@ -3,6 +3,7 @@ package com.zl.administrator.fetalmonitor.Controllers;
 
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -10,6 +11,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.database.SQLException;
+import android.graphics.Color;
 import android.os.Bundle;
 
 
@@ -23,15 +27,19 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zl.administrator.fetalmonitor.Controllers.BluetoothListActivity;
+import com.zl.administrator.fetalmonitor.Models.DBHandle;
+import com.zl.administrator.fetalmonitor.Models.Info;
 import com.zl.administrator.fetalmonitor.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
  * Created by Administrator on 2018/4/2/002.
  */
 
-public class MonitorFragment extends Fragment {
+public class MonitorFragment extends Fragment  {
 
     private Context context;
     Button bt_search;
@@ -39,7 +47,11 @@ public class MonitorFragment extends Fragment {
     Button bt_record;
 
     TextView inforTv;
-    TextView serviceInfor;
+    TextView FHR;
+    TextView TOCO;
+    TextView AFM;
+
+
     // 蓝牙适配器
     BluetoothAdapter mAdapter = BluetoothAdapter.getDefaultAdapter();;
 
@@ -47,6 +59,10 @@ public class MonitorFragment extends Fragment {
     BluetoothDevice mBtDevice;
     // 绑定的蓝牙服务
     BluetoothService mBluetoothService = null;
+    //当前登录用户
+    String username ;
+
+    final DBHandle dbHandle = new DBHandle();
 
     public MonitorFragment(Context context) {
         this.context = context;
@@ -54,12 +70,21 @@ public class MonitorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.monitor_fragment,container,false);
+
+        SharedPreferences preferences = context.getSharedPreferences("userInfo",
+                Activity.MODE_PRIVATE);
+        username = preferences.getString("username", "");
         bt_search = view.findViewById(R.id.bt_search);
         bt_connect = view.findViewById(R.id.bt_connect);
         bt_record = view.findViewById(R.id.bt_record);
 
         inforTv  = view.findViewById(R.id.infor);
-        serviceInfor = view.findViewById(R.id.service_info);
+
+
+        FHR = view.findViewById(R.id.FHR);
+        TOCO = view.findViewById(R.id.TOCO);
+        AFM = view.findViewById(R.id.AFM);
+
 
 
         bt_search.setOnClickListener(new View.OnClickListener() {
@@ -109,11 +134,29 @@ public class MonitorFragment extends Fragment {
         bt_record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Info info = new Info();
+                info.setUserID(username);
+                info.setFHR(Integer.valueOf(FHR.getText().toString()));
+                info.setTOCO(Integer.valueOf(TOCO.getText().toString()));
+                info.setAFM(Integer.valueOf(AFM.getText().toString()));
+                Date date = new Date();
+                SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                info.setTime(dateformat.format(date));
+                try{
+                    dbHandle.addinfo(info,context);
+                    Toast toast = Toast.makeText(context, "保存成功",  Toast.LENGTH_SHORT);
+                    toast.show();
+
+                } catch (SQLException ex) {
+                    Toast toast = Toast.makeText(context, "保存失败",  Toast.LENGTH_SHORT);
+                    toast.show();
+                }
 
             }
         });
         return view;
     }
+
 
     private final int MSG_ERR = 2;
     private final int MSG_SERVICE_INFOR = 10;
@@ -126,7 +169,7 @@ public class MonitorFragment extends Fragment {
             switch(msg.what) {
 
                 case MSG_SERVICE_INFOR:
-                    String infor = msg.getData().getString("infor");
+                    int infor[] = msg.getData().getIntArray("infor");
                     showServiceInfor(infor);
                     break;
 
@@ -235,7 +278,8 @@ public class MonitorFragment extends Fragment {
     public void dispString(String s)
     {
         // 将字符串添加到 TextView 显示
-        inforTv.setText(s);
+      inforTv.setText(s);
+
 
     }
 
@@ -250,8 +294,10 @@ public class MonitorFragment extends Fragment {
      * 显示服务信息
      * @param infor
      */
-    public void showServiceInfor(String infor) {
-        serviceInfor.setText(infor);
+    public void showServiceInfor(int infor[]) {
+        FHR.setText(String.valueOf(infor[0]));
+        TOCO.setText(String.valueOf(infor[1]));
+        AFM.setText(String.valueOf(infor[2]));
 
     }
 
@@ -262,11 +308,11 @@ public class MonitorFragment extends Fragment {
     BluetoothService.Callback mCallback = new BluetoothService.Callback() {
 
         @Override
-        public void dispInfor(String infor) {
+        public void dispData(int data[]) {
             Message msg = Message.obtain();
             Bundle bundle = new Bundle();
             bundle.clear();
-            bundle.putString("infor", infor);
+            bundle.putIntArray("infor", data);
             msg.setData(bundle);
             msg.what = MSG_SERVICE_INFOR;
             handler.sendMessage(msg);
@@ -282,8 +328,11 @@ public class MonitorFragment extends Fragment {
             handler.sendMessage(msg);
         }
 
-    };
+        @Override
+        public  void dispInfor(String infor){
 
+        }
+    };
 
 
 }

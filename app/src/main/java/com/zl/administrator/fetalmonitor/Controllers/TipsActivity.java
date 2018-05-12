@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.zl.administrator.fetalmonitor.R;
 
@@ -14,13 +15,16 @@ import com.zl.administrator.fetalmonitor.R;
 
 public class TipsActivity extends AppCompatActivity {
 
-    Button bt_directions ;
-    Button bt_understand;
+    private Button bt_directions ;
+    private Button bt_understand;
+
+    private ImageButton bt_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tips);
 
+        bt_back = findViewById(R.id.bt_tips_back);
         bt_directions = findViewById(R.id.bt_directions);
         bt_understand = findViewById(R.id.bt_understand);
         bt_directions.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +43,15 @@ public class TipsActivity extends AppCompatActivity {
             }
 
         });
+        bt_back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                finish();
+            }
+        });
+
 
     }
 }

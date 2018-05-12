@@ -14,6 +14,7 @@ import android.widget.EditText;
 
 import com.zl.administrator.fetalmonitor.Models.DBHandle;
 import com.zl.administrator.fetalmonitor.Models.MyDBOpenHelper;
+import com.zl.administrator.fetalmonitor.Models.User;
 import com.zl.administrator.fetalmonitor.R;
 
 import java.util.Calendar;
@@ -28,9 +29,6 @@ public class RegActivity extends AppCompatActivity {
     public EditText et_regid;
     public EditText et_regpassword;
     public EditText et_regduedate;
-    public String regid;
-    public String regpassword;
-    public String regduedate;
 
     private SQLiteDatabase db;
     private MyDBOpenHelper myDBHelper;
@@ -50,9 +48,9 @@ public class RegActivity extends AppCompatActivity {
         dbHandle = new DBHandle();
 
         bt_register = findViewById(R.id.registerBtn);
-        final EditText starttime = findViewById(R.id.duedate);
+         et_regduedate = findViewById(R.id.duedate);
         final Calendar c = Calendar.getInstance();     //创建日期选择对象
-        starttime.setOnClickListener(new View.OnClickListener() {
+        et_regduedate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             //显示弹窗 哈哈哈^_^~~~~
@@ -60,7 +58,7 @@ public class RegActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         c.set(year, monthOfYear, dayOfMonth);
-                        starttime.setText(DateFormat.format("yyy-MM-dd", c));
+                        et_regduedate.setText(DateFormat.format("yyy-MM-dd", c).toString());
                     }
                 }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
                 dialog.show();
@@ -74,13 +72,13 @@ public class RegActivity extends AppCompatActivity {
 
                 et_regid = findViewById(R.id.reguserId);
                 et_regpassword = findViewById(R.id.regpassword);
-                et_regduedate = findViewById(R.id.duedate);
 
-                regid = et_regid.getText().toString();
-                regpassword = et_regpassword.getText().toString();
-                regduedate = et_regduedate.getText().toString();
+                User user = new User();
+                user.setUserID(et_regid.getText().toString());
+                user.setPassword(et_regpassword.getText().toString());
+                user.setDueDate(et_regduedate.getText().toString());
 
-                dbHandle.adduser(regid, regpassword,context);
+                dbHandle.adduser(user,context);
 
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);

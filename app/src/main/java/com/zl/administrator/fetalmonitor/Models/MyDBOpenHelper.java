@@ -21,14 +21,14 @@ public class MyDBOpenHelper extends SQLiteOpenHelper {
                 "    Password TEXT,\n" +
                 "    Height   INT,\n" +
                 "    Weight   INT,\n" +
-                "    DueDate  DATE\n" +
+                "    DueDate  TEXT\n" +
                 ");\n");
         db.execSQL("CREATE TABLE info (\n" +
                 "UserID TEXT NOT NULL,\n" +
                 "FHR INT,\n" +
                 "TOCO INT,\n" +
                 "AFM INT,\n" +
-                "Time DATE NOT NULL,\n" +
+                "Time TEXT NOT NULL,\n" +
                 "FOREIGN KEY (\n" +
                 "UserID\n" +
                 ")\n" +
@@ -43,12 +43,14 @@ public class MyDBOpenHelper extends SQLiteOpenHelper {
                 "                NOT NULL,\n" +
                 "    High   INT,\n" +
                 "    Low    INT,\n" +
+                "    Switch    INT,\n" +
                 "    FOREIGN KEY (\n" +
                 "        UserID\n" +
                 "    )\n" +
                 "    REFERENCES user (UserID) \n" +
                 ");\n");
-        db.execSQL("INSERT INTO user(UserID,Name,Password, Height, Weight,DueDate) values(\"super\",\"超人妈妈\",\"123456\",167,60,\"2018-10-10\")");
+        db.execSQL("INSERT INTO user(UserID,Name,Password, Height, Weight,DueDate) values(\"super\",\"妈妈一号\",\"123456\",167,60,\"2018-10-10\")");
+        db.execSQL("INSERT INTO user(UserID,Name,Password, Height, Weight,DueDate) values(\"baby\",\"妈妈二号\",\"123456\",167,70,\"2018-10-10\")");
     }
     //软件版本号发生改变时调用
     @Override

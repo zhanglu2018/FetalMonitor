@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                     fragmentTransaction.show(monitorFragment);
                 }
                 break;
-            case R.id.rb_history:
+            case R.id.rb_history:;
                 if(historyFragment == null){
-                    historyFragment = new HistoryFragment("这是历史记录页面");
+                    historyFragment = new HistoryFragment(this);
                     fragmentTransaction.add(R.id.main_view,historyFragment);
                 }else{
                     fragmentTransaction.show(historyFragment);

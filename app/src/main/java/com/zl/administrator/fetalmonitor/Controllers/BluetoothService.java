@@ -47,22 +47,14 @@ public class BluetoothService extends Service {
 	
 	// 是否保存标志
 	boolean isRecord = false;
-	
-	
 	/** 终端协议解析器 */
 	public LMTPDecoder mLMTPDecoder = null;
 	/** 解析器回调接口 */
 	LMTPDListener mLMTPDListener = null;
-	
-	
 	@Override
 	public IBinder onBind(Intent intent) {
 		return mBinder;
 	}
-	
-	
-
-	
 	@Override
 	public void onCreate() {
 		mLMTPDecoder = new LMTPDecoder();
@@ -179,6 +171,8 @@ public class BluetoothService extends Service {
 		 */
 		public void dispInfor(String infor);
 
+		public void dispData(int data[]);
+
 		/**
 		 * 主要显示记录状态
 		 * @param sta
@@ -236,8 +230,7 @@ public class BluetoothService extends Service {
 		}
     	
 	}
-	
-	
+
 	/*
 	 * 读数据线程
 	 */
@@ -299,7 +292,6 @@ public class BluetoothService extends Service {
 		
 	}
 	
-	
 	/**
 	 * 获取工作状态
 	 * @return
@@ -324,28 +316,7 @@ public class BluetoothService extends Service {
 			mCallback.dispServiceStatus(getResources().getString(R.string.recording));
 
 	}
-	
-	/**
-	 * 结束记录
-	 */
-	public void recordFinished() {
-		isRecord = false;
-		mLMTPDecoder.finishRecordWave();
 
-		if(mCallback != null)
-			mCallback.dispServiceStatus(getResources().getString(R.string.record_finished));
-
-	}
-	
-	/**
-	 * 获取记录状态
-	 * @return
-	 */
-	public boolean getRecordStatus() {
-		return isRecord;
-	}
-
-	
 	/**
 	 * 协议解析器回调接口
 	 * @author Administrator
@@ -365,6 +336,7 @@ public class BluetoothService extends Service {
 					fhrData.fhr1, fhrData.toco, fhrData.afm, fhrData.fhrSignal, fhrData.devicePower,
 					fhrData.isHaveFhr1, fhrData.isHaveToco, fhrData.isHaveAfm
 					);
+			int infor1[] = {fhrData.fhr1, fhrData.toco, fhrData.afm};
 			
 			if(fhrData.fmFlag != 0)
 				Log.v("LMTPD", "LMTPD...1...fm");
@@ -373,7 +345,7 @@ public class BluetoothService extends Service {
 				Log.v("LMTPD", "LMTPD...2...toco");
 
 			if(mCallback != null)
-				mCallback.dispInfor(infor);
+				mCallback.dispData(infor1);
 		}
 
 		/**

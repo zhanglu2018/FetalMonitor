@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/history_Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="10sp"
+        android:text="时间"/>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:textSize="10sp"
+            android:text="胎心率" />
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="90dp"
+            android:textSize="10sp"
+            android:text="宫缩压力" />
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="90dp"
+            android:textSize="10sp"
+            android:text="胎动" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/history_FHR"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:textColor="@color/text_black"
+            android:text="胎心率" />
+        <TextView
+            android:id="@+id/history_TOCO"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="90dp"
+            android:textSize="15sp"
+            android:textColor="@color/text_black"
+            android:text="宫缩压力" />
+        <TextView
+            android:id="@+id/history_AFM"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="90dp"
+            android:textSize="15sp"
+            android:textColor="@color/text_black"
+            android:text="胎动" />
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_marginLeft="1.0px"
+        android:layout_marginRight="1.0px"
+        android:layout_marginTop="5dp"
+        android:background="@color/div" />
+
+</LinearLayout>

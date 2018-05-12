@@ -31,11 +31,9 @@ public class KnowledgeFragment extends Fragment {
             //设置在webView点击打开的新网页在当前界面显示,而不跳转到新的浏览器中
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                //view.loadUrl(url);
                 return false;
             }
         });
         return view;
     }
-
 }
